@@ -1,0 +1,8 @@
+.invalid input{
+  border: 2px solid #ff424f;
+  color: #ff424f;
+}
+.invalid span{
+  color: #ff424f;
+  font-size: 12px;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/fontawesome-free-5.15.3-web/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/loginSystem/validate.css">
+  <link rel="stylesheet" href="/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="vh-100 bg-image" style="background-image: url('/background-login.jpg');">
+    <div class="register container h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Tạo tài khoản</h2>
+
+              <form class="form" method="POST" id="form1" novalidate>
+
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <label for="fullName" class="input-group-text"> <i class="fa fa-user"></i> </label>
+                  </div>
+                  <input id="fullName" name="fullName" class="form-control" placeholder="Họ tên" type="text">
+                  <span class="form-message col-12"></span>
+                </div>
+
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <label for="email" class="input-group-text"> <i class="fa fa-envelope"></i> </label>
+                  </div>
+                  <input id="email" name="email" class="form-control" placeholder="Email" type="text" >
+                  <span class="form-message col-12"></span>
+                </div>
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <label for="address" class="input-group-text"> <i class="fa fa-home"></i> </label>
+                  </div>
+                  <input id="address" name="address" class="form-control" placeholder="Địa chỉ" type="text" >
+                  <span class="form-message col-12"></span>
+                </div>
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <label for="phone" class="input-group-text"> <i class="fas fa-phone"></i> </label>
+                  </div>
+                  <input id="phone" name="phone" class="form-control" placeholder="Số điện thoại" type="text" >
+                  <span class="form-message col-12"></span>
+                </div>
+                <div class="form-group input-group" >
+                  <div class="input-group-prepend">
+                    <label for="username" class="input-group-text"> <i class="fas fa-user"></i></i> </label>
+                  </div>
+                  <input id="username" name="username" class="form-control" placeholder="Tên đăng nhập" type="text" >
+                  <span  class="form-message col-12"></span>
+                </div>
+                
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <label for="password"  class="input-group-text"> <i class="fas fa-lock"></i></i> </span>
+                  </div>
+                  <input id="password" name="password" class="form-control" placeholder="Mật khẩu" type="password">
+                  <span class="form-message col-12"></span>
+                </div>
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <label for="confirmPassword" class="input-group-text"> <i class="fas fa-lock"></i></i> </label>
+                  </div>
+                  <input id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Xác nhận mật khẩu" type="password"
+                    >
+                    <span class="form-message col-12"></span>
+                </div>
+
+
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-block btn-lg btn-register text-white ">Đăng ký</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Đã có tài khoản? <a href="login.html" class="fw-bold ">Đăng
+                    nhập</a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/loginSystem/validate.js"></script>
+<script>
+  validator({
+    form: '#form1',
+    errorSelector: ".form-message",
+    rules: [validator.isRequiredFullName('#fullName'),
+      validator.isRequiredUserName('#username'),
+      validator.isRequiredPhone('#phone'),
+      validator.isEmail('#email'),
+      validator.isAddress('#address'),
+      validator.isPassword('#password'),
+      validator.isConfirmed('#confirmPassword', function(){
+        return document.querySelector('#form1 #password').value;
+      }),
+    ],
+    onSubmit: function(data){
+      // Call API
+      let accountApi = 'http://localhost:3000/account';
+      fetch(accountApi, {
+        method:'POST',
+        headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+        body: JSON.stringify(data)
+      })
+      .then(function(response){
+        return response.json(); 
+      })
+      .then(function(){
+        alert('Đăng ký thành công!!!')
+      })
+      }
+  });
+</script>
+</body>
+
+</html>

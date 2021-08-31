@@ -1,0 +1,61 @@
+{
+  "account": [
+    {
+      "id": "1",
+      "fullname": "Khac Hoang",
+      "email": "hoang@gmail.com",
+      "address": "21 Quang Trung, Da Nang",
+      "phone": "0973451505",
+      "username": "hoang106",
+      "password": "Mn123123",
+      "role": "admin"
+    },
+    {
+      "fullname": "Khac Hoang 3",
+      "email": "hoang2@gmail.com",
+      "address": "22 Nguyen Hue, Da Nang",
+      "phone": "0983451505",
+      "username": "cmn",
+      "password": "Mn123123",
+      "id": "3"
+    },
+    {
+      "id": "chC3a7G"
+    },
+    {
+      "id": "wwKwk1l"
+    },
+    {
+      "id": "gLNgKOF"
+    },
+    {
+      "id": "YxaDcOW"
+    },
+    {
+      "id": "TVKJf0B"
+    },
+    {
+      "id": "z5TPzYI"
+    },
+    {
+      "fullName": "zxc",
+      "email": "hoangmonkey99@gmail.com",
+      "address": "18 Quang Trung, Da Nang",
+      "phone": "0973451505",
+      "username": "hoangkhac106",
+      "password": "Mn123123",
+      "confirmPassword": "Mn123123",
+      "id": "pRqDcHd"
+    },
+    {
+      "fullName": "hoanghoang",
+      "email": "hoangmonkey99@gmail.com",
+      "address": "18 Quang Trung, Da Nang",
+      "phone": "0973451505",
+      "username": "hoangkhac1009",
+      "password": "Mn123123",
+      "confirmPassword": "Mn123123",
+      "id": "2K126fI"
+    }
+  ]
+}

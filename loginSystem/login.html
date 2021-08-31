@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/fontawesome-free-5.15.3-web/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/loginSystem/validate.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="vh-100 bg-image" style="background-image: url('/background-login.jpg');">
+    <div class="register container h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Đăng nhập</h2>
+
+              <form id="login-form">
+
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <label for="username" class="input-group-text"> <i class="fas fa-user"></i></i> </label>
+                  </div>
+                  <input id="username" name="username" class="form-control" placeholder="Tên đăng nhập" type="text">
+                  <span class="form-message col-12"></span>
+                </div>
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <label for="password" class="input-group-text"> <i class="fas fa-key fa-flip-horizontal"></i></span>
+                  </div>
+                  <input id="password" name="password" class="form-control" placeholder="Mật khẩu" type="password">
+                  <span class="form-message col-12"></span>
+                </div>
+
+                <div class="pb-4">
+                  <a href="register.html">Đăng ký</a>
+                  <a class="float-right" href="forgotpassword.html">Quên mật khẩu?</a>
+
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-block btn-lg btn-login text-white ">Đăng nhập</button>
+                </div>
+                <div class="text-center p-5">Hoặc đăng nhập với</div>
+
+
+                <div class="d-flex justify-content-between social-btn">
+                  <button type="button" class="col-xl-5 col-sm-5 col-12 btn btn-facebook text-white mb-2"> <i
+                      class="fab fa-facebook-square pr-2"></i>Facebook</button>
+                  <button type="button" class="col-xl-5 col-sm-5 col-12 btn btn-google text-white mb-2"><i
+                      class="fab fa-google-plus-g pr-2"></i>Google</button>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/loginSystem/validate.js"></script>
+  <script>
+
+    validator({
+      form: '#login-form',
+      errorSelector: ".form-message",
+      rules: [
+        validator.isRequiredUserName('#username'),
+        validator.isPassword('#password'),
+      ],
+      onSubmit: function (data) {
+        // call api
+        console.log(data);
+        let loginApi = 'http://localhost:3000/account';
+        fetch(loginApi)
+          .then(function (respon) {
+            return respon.json();
+          })
+          .then(function (data) {
+
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+
+
+            let result = data.filter(obj => {
+              return obj.username === username & obj.password === password;
+            })
+            if (result.length !== 0) {
+              alert('Login success');
+              location.replace('register.html')
+            }
+            else {
+              alert('Login fail');
+            }
+            let result2 = data.filter(obj => {
+                return obj.username === username & obj.username === username & obj.role === 'admin';
+              })
+              console.log(result2)
+                if (result2.length !== 0) {
+                  location.replace('index.html');
+                }
+          
+          });
+
+
+      }
+    });
+  </script>
+</body>
+
+</html>

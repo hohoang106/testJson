@@ -1,0 +1,243 @@
+
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* Home */
+.carousel-item{
+  height: 30rem;
+}
+.fa-chevron-left{
+  position: absolute;
+  top: 15rem;
+  left: 0;
+}
+.fa-chevron-right{
+  position: absolute;
+  top: 15rem;
+  right: 0;
+}
+.container-fit{
+  background-image: url("backgr1.jpg");
+}
+h4, h3, h5{
+  color: #187AAB;
+}
+
+/* Register */
+.register{
+  color: #187AAB;
+}
+.btn-register{
+  background-color:#187AAB ;
+}
+input ::placeholder {
+  color: #187AAB;
+}
+
+/* Login */
+.btn-facebook{
+  background-color: #3C589C;
+}
+.btn-google{
+
+  background-color: #DF4B3B;
+}
+a{
+  color: #187AAB;
+  
+}
+.btn-login{
+  background-color:#187AAB ;
+  opacity: 0.9 ;
+}
+.btn-login:hover{
+  opacity: 1;
+}
+@media (max-width: 575px) {
+  .social-btn{
+    flex-direction: column;
+  }
+}
+
+/* forgot password */
+.btn-cancer{
+  background-color: grey;
+}
+.btn-send , .btn-add{
+  background-color: #187AAB;
+}
+
+.price{
+  color: #187AAB;
+}
+
+.custom-carousel{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(5, 3, 3, 0.3);
+}
+.text-slide{
+  color: white;
+  font-size: 3rem;
+  position: relative;
+  top: 10rem;
+}
+.btn-chitiet-slide{
+  border: none;
+  color: white;
+  background-color: #187aabc2;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-top: 10rem;
+}
+.btn-chitiet-slide > a:link{
+  text-decoration: none;
+}
+.btn-chitiet-slide > a{
+  color: white;
+}
+.btn-chitiet-slide > a:hover{
+  color: white;
+}
+/* Add Modal */
+label{
+  color: #187AAB;
+}
+.modal-header{
+  background-color: #187AAB;
+}
+.danhMucKienThuc{
+  border: 2px solid #187AAB;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: white;
+  background-color: #187AAB;
+}
+.btn-vietBai{
+  background-color: #187AAB;
+  border-radius: 5px;
+  border: none;
+}
+.page-link{
+  color: #187AAB;
+  
+}
+.page-item.active .page-link{
+  background-color: #187AAB;
+}
+th{
+  color: #187AAB;
+}
+
+/* listquestion */
+.avatar{
+ border-radius: 50%;
+ width: 50px;
+ height: 50px;
+}
+.question-body{
+  border-bottom: 1px solid rgb(212, 211, 211);
+}
+.author-name{
+  color: #187AAB;
+  font-size: 14px;
+}
+.date{
+  color: gray;
+  font-size: 12px;
+}
+.numberOfAnswer, .icon-comment{
+  color: #187AAB;
+  font-size: 14px;
+  cursor: pointer;
+}
+.icon-comment{
+  cursor: pointer;
+}
+.block-vote{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.datCauHoi, .fa-2x{
+  color: #187AAB;
+  
+}
+.title-a{
+  cursor: pointer;
+}
+.arrow-up, .arrow-down{
+  cursor: pointer;
+}
+.part_2{
+  font-size: 14px;
+}
+.img-tapluyen{
+  height: 250px;
+}
+@media (max-width: 768px) {
+  *{
+    font-size: 14px;
+  }
+  .title-a{
+    font-size: 20px;
+  }
+  .block-vote{
+    flex-direction: row;
+  }
+  .vote{
+    margin-left: 1rem;
+  }
+  .img-tapluyen{
+    height: 250px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  .img-tapluyen{
+    height: 500px;
+  }
+  
+}
+
+.dropdown:hover .dropdown-menu{display: block;}
+.card-title{
+  cursor: pointer;
+}
+/* .content-td:hover{
+  background-color: rgba(86, 181, 236, 0.568);
+  border-radius: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+} */
+/* Navbar */
+.header-navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+h4:hover{
+  color: rgba(0, 187, 187, 0.644);
+}
+h5:hover{
+  cursor: pointer;
+  color: rgba(0, 187, 187, 0.644);
+}
+img:hover{
+  opacity: 0.8  ;
+}
+.span-chitiet{
+  color: #187AAB;
+}
+h1, h2 , h3 , h4 , h5 , h6{
+  font-family: Arial, Helvetica, sans-serif;
+}
+h3{
+  text-transform: uppercase;
+}
